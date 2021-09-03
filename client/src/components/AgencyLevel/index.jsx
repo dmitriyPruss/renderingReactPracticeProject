@@ -1,40 +1,26 @@
 import React, { Component } from 'react';
 import DataColumn from '../DataColumn';
-import AgencyLevelElement from '../AgencyLevelElement';
+import LevelElement from '../LevelElement';
 import styles from './AgencyLevel.module.scss';
 
-class AgencyLevel extends Component {
-  constructor (props) {
-    super(props);
-
-    this.state = {};
-  }
-
-  columnsRender = ({ data, isFetching, error }) => {
-    return (
-      <>
-        {isFetching && <div>Loading...</div>}
-        {error && <div>ERROR</div>}
-        <ul className={styles.agencyElementsContainer}>
-          {data.map(column => (
-            <AgencyLevelElement column={column} />
-          ))}
-        </ul>
-      </>
-    );
-  };
-
-  render () {
-    return (
-      <article className={styles.agencyLevelContainer}>
-        <h2>Agency Level Experience</h2>
-        <DataColumn
-          fileName='/agencyExperience.json'
-          render={this.columnsRender}
-        />
-      </article>
-    );
-  }
-}
+const AgencyLevel = () => {
+  const columnsRender = ({ data, isFetching, error }) => (
+    <>
+      {isFetching && <div style={{ color: 'blue' }}>Loading...</div>}
+      {error && <div style={{ color: 'red' }}>ERROR</div>}
+      <ul className={styles.agencyElementsContainer}>
+        {data.map(levelElementData => (
+          <LevelElement levelElementData={levelElementData} />
+        ))}
+      </ul>
+    </>
+  );
+  return (
+    <article className={styles.agencyLevelContainer}>
+      <h2>Agency Level Experience</h2>
+      <DataColumn fileName='/agencyExperience.json' render={columnsRender} />
+    </article>
+  );
+};
 
 export default AgencyLevel;
