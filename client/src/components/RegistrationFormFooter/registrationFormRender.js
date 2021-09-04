@@ -1,4 +1,3 @@
-import constants from '../../constants';
 import styles from './RegistrationFormFooter.module.scss';
 
 const showArticleInfo = arr =>
