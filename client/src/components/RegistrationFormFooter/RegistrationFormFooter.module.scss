@@ -1,0 +1,53 @@
+.articlesMainContainer {
+  width: 82%;
+  display: flex;
+  min-width: 300px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: white;
+  box-shadow: 0 0 80px rgb(207, 207, 207) inset;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
+}
+
+.ColumnContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-right: 48px;
+  margin-left: 48px;
+  flex: 1;
+  padding-top: 20px;
+}
+
+.headerArticle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #363945;
+  margin-bottom: 20px;
+}
+
+.articleEmphasized {
+  color: #888f99;
+  font-weight: bold;
+}
+
+.article {
+  color: #9ca8b7;
+  line-height: 30px;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.orangeSpan {
+  color: #f18762;
+  text-decoration: none;
+}
