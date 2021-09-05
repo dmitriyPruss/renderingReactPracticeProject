@@ -29,7 +29,7 @@
 }
 
 .agencyElement:hover {
-  background: linear-gradient(rgb(43, 98, 236), rgb(16, 34, 80));
+  background: linear-gradient(rgb(43, 98, 236), rgb(43, 48, 48));
   border-radius: 2px;
   cursor: pointer;
   box-sizing: border-box;
@@ -38,6 +38,10 @@
   & h3 {
     color: white;
     text-shadow: 0px 2px 2px rgb(54, 54, 54), 0px 4px 5px rgb(7, 105, 105);
+  }
+
+  & p {
+    color: rgb(163, 162, 162);
   }
 
   & a:hover {
