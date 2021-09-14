@@ -1,14 +1,10 @@
 .articlesMainContainer {
-  width: 82%;
   display: flex;
   min-width: 300px;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
   background-color: white;
-  border-radius: 3px;
-  box-shadow: 0 0 7px rgb(5, 5, 5) inset;
-  margin-bottom: 10px;
   letter-spacing: 1px;
 
   @media (max-width: 1000px) {
@@ -21,10 +17,13 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-right: 48px;
-  margin-left: 48px;
+  margin: 60px 90px;
   flex: 1;
   padding-top: 20px;
+
+  @media (max-width: 1000px) {
+    margin: 0px 30px;
+  }
 }
 
 .headerArticle {
