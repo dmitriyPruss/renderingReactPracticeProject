@@ -1,0 +1,126 @@
+* 
+  box-sizing: border-box
+  
+.articlesList
+  max-width: 1240px
+  margin: 20px 0 20px
+  padding: 30px
+  width: 100%
+  height: 700px
+  display: flex
+  justify-content: space-between
+  background: rgb(248, 248, 248)
+
+.pricesListItem
+  width: 22%
+  cursor: pointer
+  font-size: 15px
+
+.header
+  border-style: solid
+  border-width: 10px
+  padding: 10px
+  height: 180px
+  width: 100%
+  margin-bottom: 20px
+  font-family: 'Raleway',sans-serif
+  display: flex
+  flex-direction: column
+  position: relative
+  background: white
+
+  h3
+    font-size: 33px
+    font-family: 'Raleway', sans-serif
+    font-weight: 700
+  
+  p
+    padding: 15px 10px
+    letter-spacing: 1px
+    color: rgb(123, 123, 123)
+    font-size: 16px
+
+  div
+    text-align: right
+
+.header:hover
+  box-shadow: 0px 10px 15px grey
+
+.optionsList
+  position: relative
+
+  li 
+    padding: 10px 0
+    border-bottom: 2px solid lightgrey
+
+  .showedElem, .unshowedElem
+    padding: 10px 0
+
+  .showedElem:hover
+    font-weight: 500
+
+  .showedElem::after
+    content: attr(data-tooltip)
+    position: absolute
+    left: 105%
+    padding: 20px
+    opacity: 0
+    transform: translateY(-50%) 
+    background: black
+    color: white
+    z-index: 98
+    transition: 0.3s
+    font-weight: normal
+    border: 2px solid black
+    border-radius: 2px
+    font-size: 14px
+    width: 100px
+    pointer-events: none
+
+  .showedElem:before
+    opacity: 0
+    position: absolute
+    left: 98%
+    border: 10px solid transparent
+    border-right: 12px solid black
+    content: ''
+    transition: 0.3s
+    z-index: 98
+
+  .showedElem:hover::before, .showedElem:hover::after
+    opacity: 1
+    transform: translateY(-50%) scale(1) 
+
+  li:last-child
+    border-bottom: none
+
+  li:last-child:hover
+    margin-bottom: 3px
+
+  .innerShowedElement
+    padding-left: 20px
+    font-size: 12px
+
+.currency
+  font-size: 20px
+  font-weight: bold
+  position: absolute
+  bottom: 20px
+  right: 58px 
+
+.currencyValue
+    height: 20px
+    font-size: 22px
+    font-family: 'Raleway', sans-serif
+    position: relative
+    
+
+.startLink
+  display: block
+  width: 100%
+  height: 3em
+  line-height: 3em
+  text-align: center
+  text-decoration: none
+  color: white
+  border-radius: 3px
