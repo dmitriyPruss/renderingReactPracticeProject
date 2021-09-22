@@ -121,7 +121,10 @@ function PricesListItem (props) {
                                 />
                                 <span>{mainStr}</span>
                                 <br />
-                                <a href='https://www.squadhelp.com/assets/nimages/AudienceTestingReport.pdf'>
+                                <a
+                                  style={{ textDecoration: 'none' }}
+                                  href='https://www.squadhelp.com/assets/nimages/AudienceTestingReport.pdf'
+                                >
                                   {linkStr}
                                 </a>
                               </p>
@@ -156,11 +159,14 @@ function PricesListItem (props) {
               </li>
             );
           } else if (typeof o === 'string') {
-            return o === 'link!)' ? (
+            return o.indexOf('Learn') === 0 ? (
               <p className={styles.unshowedElem}>
-                Learn More about{' '}
-                <a href='https://www.squadhelp.com/managed-contests'>
-                  Managed Contest Service
+                {o.split('|')[0]}
+                <a
+                  style={{ textDecoration: 'none' }}
+                  href='https://www.squadhelp.com/managed-contests'
+                >
+                  {o.split('|')[1]}
                 </a>
               </p>
             ) : (

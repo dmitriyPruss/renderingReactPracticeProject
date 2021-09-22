@@ -3,6 +3,7 @@
   
 .articlesList
   max-width: 1240px
+  min-width: 320px
   margin: 20px 0 20px
   padding: 30px
   width: 100%
@@ -11,16 +12,32 @@
   justify-content: space-between
   background: rgb(248, 248, 248)
 
+  @media screen and (max-width: 900px) 
+    flex-direction: column
+    height: auto
+
+  @media screen and (max-width: 510px) 
+    width: 90%
+    align-items: center
+
 .pricesListItem
   width: 22%
   cursor: pointer
   font-size: 15px
 
+  @media screen and (max-width: 900px) 
+    width: 70%
+    height: auto
+    margin-bottom: 20px
+
+  @media screen and (max-width: 510px) 
+    width: 90%
+
 .header
   border-style: solid
   border-width: 10px
   padding: 10px
-  height: 180px
+  height: 200px
   width: 100%
   margin-bottom: 20px
   font-family: 'Raleway',sans-serif
@@ -59,23 +76,35 @@
   .showedElem:hover
     font-weight: 500
 
+    @media screen and (max-width: 510px) 
+      font-weight: normal
+
   .showedElem::after
     content: attr(data-tooltip)
     position: absolute
     left: 105%
     padding: 20px
     opacity: 0
-    transform: translateY(-50%) 
+    transform: translateY(-50%) scale(0)
     background: black
     color: white
     z-index: 98
-    transition: 0.3s
+    transition: 0.1s
     font-weight: normal
     border: 2px solid black
     border-radius: 2px
     font-size: 14px
     width: 100px
     pointer-events: none
+
+    @media screen and (max-width: 900px) 
+      left: 102%
+    
+    @media screen and (max-width: 900px) 
+      margin-bottom: 0
+
+    @media screen and (max-width: 510px) 
+      display: none
 
   .showedElem:before
     opacity: 0
@@ -84,8 +113,23 @@
     border: 10px solid transparent
     border-right: 12px solid black
     content: ''
-    transition: 0.3s
-    z-index: 98
+    transform: translateY(50%) scale(0) 
+    transition: 0.15s
+
+    @media screen and (max-width: 900px) 
+      left: 99%
+
+    @media screen and (max-width: 780px) 
+      left: 98%
+
+    @media screen and (max-width: 630px) 
+      left: 97%
+
+    @media screen and (max-width: 530px) 
+      left: 96%
+
+    @media screen and (max-width: 510px) 
+      display: none
 
   .showedElem:hover::before, .showedElem:hover::after
     opacity: 1
@@ -97,9 +141,19 @@
   li:last-child:hover
     margin-bottom: 3px
 
+    @media screen and (max-width: 900px) 
+      margin-bottom: 0
+
   .innerShowedElement
     padding-left: 20px
-    font-size: 12px
+    font-size: 13px
+
+  .showedElem, .unshowedElem 
+    a
+      color: #337ab7
+    a:hover
+      color: rgb(87, 123, 154)
+
 
 .currency
   font-size: 20px
