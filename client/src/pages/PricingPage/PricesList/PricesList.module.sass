@@ -12,12 +12,11 @@
   justify-content: space-between
   background: rgb(248, 248, 248)
 
-  @media screen and (max-width: 900px) 
+  @media screen and (max-width: 1000px) 
     flex-direction: column
     height: auto
 
-  @media screen and (max-width: 510px) 
-    width: 90%
+  @media screen and (max-width: 810px) 
     align-items: center
 
 .pricesListItem
@@ -25,13 +24,13 @@
   cursor: pointer
   font-size: 15px
 
-  @media screen and (max-width: 900px) 
-    width: 70%
+  @media screen and (max-width: 1000px) 
+    width: 80%
     height: auto
     margin-bottom: 20px
 
-  @media screen and (max-width: 510px) 
-    width: 90%
+  @media screen and (max-width: 810px) 
+    width: 95%
 
 .header
   border-style: solid
@@ -45,6 +44,22 @@
   flex-direction: column
   position: relative
   background: white
+
+  @media screen and (max-width: 810px) 
+    height: 170px
+    align-items: center
+
+  .toggledButton
+    display: none
+    height: 50px
+    position: absolute
+    top: 5px
+    right: 10px
+    font-size: 30px
+    font-weight: bold
+
+    @media screen and (max-width: 810px)
+      display: block
 
   h3
     font-size: 33px
@@ -63,6 +78,12 @@
 .header:hover
   box-shadow: 0px 10px 15px grey
 
+.mainInfo
+  width: 100%
+
+  @media screen and (max-width: 810px)
+    display: none
+
 .optionsList
   position: relative
 
@@ -76,7 +97,7 @@
   .showedElem:hover
     font-weight: 500
 
-    @media screen and (max-width: 510px) 
+    @media screen and (max-width: 810px) 
       font-weight: normal
 
   .showedElem::after
@@ -97,38 +118,29 @@
     width: 100px
     pointer-events: none
 
-    @media screen and (max-width: 900px) 
+    @media screen and (max-width: 1000px) 
       left: 102%
     
     @media screen and (max-width: 900px) 
       margin-bottom: 0
 
-    @media screen and (max-width: 510px) 
+    @media screen and (max-width: 810px) 
       display: none
 
   .showedElem:before
     opacity: 0
     position: absolute
-    left: 98%
+    left: 97%
     border: 10px solid transparent
     border-right: 12px solid black
     content: ''
     transform: translateY(50%) scale(0) 
-    transition: 0.15s
+    transition: 0.05s
 
-    @media screen and (max-width: 900px) 
+    @media screen and (max-width: 1000px) 
       left: 99%
-
-    @media screen and (max-width: 780px) 
-      left: 98%
-
-    @media screen and (max-width: 630px) 
-      left: 97%
-
-    @media screen and (max-width: 530px) 
-      left: 96%
-
-    @media screen and (max-width: 510px) 
+    
+    @media screen and (max-width: 810px) 
       display: none
 
   .showedElem:hover::before, .showedElem:hover::after
@@ -168,7 +180,6 @@
     font-family: 'Raleway', sans-serif
     position: relative
     
-
 .startLink
   display: block
   width: 100%
