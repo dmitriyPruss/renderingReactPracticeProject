@@ -4,9 +4,11 @@ import ElemWithLinkViewReport from './ElemWithLinkViewReport';
 function ListElements (props) {
   const {
     options,
-    optionsListClass,
-    showedElemClass,
-    unshowedElemClass,
+    listElementsClasses: {
+      optionsListClass,
+      showedElemClass,
+      unshowedElemClass,
+    },
   } = props;
 
   return (
@@ -18,7 +20,10 @@ function ListElements (props) {
               {o.map((item, index) =>
                 Array.isArray(item) ? (
                   item.map(innerItem => (
-                    <ElemWithLinkViewReport innerItem={innerItem} {...props} />
+                    <ElemWithLinkViewReport
+                      innerItem={innerItem}
+                      listElementsClasses={props.listElementsClasses}
+                    />
                   ))
                 ) : (
                   <div

@@ -3,17 +3,16 @@ import CurrencyValue from './CurrencyValue';
 
 function CurrencyValues (props) {
   const {
-    currencyValuesClass,
     styleColor,
     currency,
     amount,
-    currencyValueClass,
+    priceHeaderClasses: { currencyClass, currencyValuesClass },
   } = props;
 
   return (
     <div className={currencyValuesClass} style={styleColor}>
       <span>{currency}</span>
-      <span className={currencyValueClass}>
+      <span className={currencyClass}>
         {amount.split('').map((value, index) => {
           if (index === 0) {
             return +value === 4 || +value === 9 ? (

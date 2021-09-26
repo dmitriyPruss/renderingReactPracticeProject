@@ -1,7 +1,12 @@
 import React from 'react';
 
 function ToggleButton (props) {
-  const { toggleElement, toggleSign, color, toggledButton } = props;
+  const {
+    toggleElement,
+    toggleSign,
+    color,
+    priceHeaderClasses: { toggledButton },
+  } = props;
 
   return (
     <div className={toggledButton} style={color} onClick={toggleElement}>

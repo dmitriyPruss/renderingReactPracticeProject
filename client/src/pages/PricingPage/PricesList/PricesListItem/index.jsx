@@ -1,4 +1,4 @@
-import React, { Component, useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import PricesElementHeader from './PricesElementHeader';
 import ListElements from './ListElements';
@@ -27,28 +27,36 @@ function PricesListItem (props) {
     color,
   } = props;
 
+  const priceHeaderClasses = {
+    classHeader: styles.header,
+    toggledButton: styles.toggledButton,
+    currencyValuesClass: styles.currency,
+    currencyClass: styles.currencyValue,
+  };
+
+  const listElementsClasses = {
+    optionsListClass: styles.optionsList,
+    showedElemClass: styles.showedElem,
+    innerShowedElementClass: styles.innerShowedElement,
+    unshowedElemClass: styles.unshowedElem,
+  };
+
   return (
     <li className={styles.pricesListItem}>
       <PricesElementHeader
-        classHeader={styles.header}
+        priceHeaderClasses={priceHeaderClasses}
         toggleSign={toggleSign}
         colorName={colorName}
         description={description}
-        toggledButton={styles.toggledButton}
         toggleElement={toggleElement}
-        currencyValuesClass={styles.currency}
         styleColor={{ color: color }}
         currency={currency}
         amount={amount}
-        currencyValueClass={styles.currencyValue}
       />
       <section className={styles.mainInfo} ref={listRef}>
         <ListElements
           options={options}
-          optionsListClass={styles.optionsList}
-          showedElemClass={styles.showedElem}
-          innerShowedElementClass={styles.innerShowedElement}
-          unshowedElemClass={styles.unshowedElem}
+          listElementsClasses={listElementsClasses}
         />
         <Link
           to='#'

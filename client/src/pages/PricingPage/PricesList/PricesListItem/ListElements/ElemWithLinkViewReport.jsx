@@ -2,7 +2,10 @@ import React from 'react';
 import classNames from 'classnames';
 
 function ElemWithLinkViewReport (props) {
-  const { innerItem, showedElemClass, innerShowedElementClass } = props;
+  const {
+    innerItem,
+    listElementsClasses: { showedElemClass, innerShowedElementClass },
+  } = props;
   const linkStr = 'View Sample Report';
   const iWithoutSpaces = innerItem.text.split(' ').join('');
   const innerElemClass = classNames(showedElemClass, innerShowedElementClass);

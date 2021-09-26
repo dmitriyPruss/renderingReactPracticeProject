@@ -3,7 +3,12 @@ import ToggleButton from './ToggleButton';
 import CurrencyValues from './CurrencyValues';
 
 function PricesElementHeader (props) {
-  const { classHeader, styleColor, colorName, description } = props;
+  const {
+    priceHeaderClasses: { classHeader },
+    styleColor,
+    colorName,
+    description,
+  } = props;
 
   return (
     <div className={classHeader} style={styleColor}>
